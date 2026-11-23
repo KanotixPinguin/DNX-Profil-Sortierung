@@ -97,3 +97,11 @@ sudo ./install.sh uninstall
 **DE:** Private, inoffizielle Hobby-Anpassung (Mod-Mode) für OpenWebRX / OpenWebRX+. Kein offizielles OpenWebRX- oder OpenWebRX+-Projekt, keine Verbindung zu oder Unterstützung durch die jeweiligen Entwickler. Nutzung erfolgt vollständig auf eigene Gefahr; soweit gesetzlich zulässig wird jede Haftung ausgeschlossen. Vor dem Einspielen bitte Sicherungen anlegen.
 
 **EN:** Private, unofficial hobby modification (Mod-Mode) for OpenWebRX / OpenWebRX+. Not an official OpenWebRX or OpenWebRX+ project; no affiliation with or support from its maintainers. Use entirely at your own risk; to the extent permitted by law, no liability is accepted. Always create backups before installing.
+
+---
+
+## Verbindungen im DNX-Ökosystem
+
+![DNX Gesamtarchitektur & Verbindungen](docs/dnx-architektur-verbindungen.png)
+
+* **Verbindung zu `DNX-Styler` (`waterfall_pro` Profil-Pegel) & `Account Control` (`:8095/:8096`):** Sortiert die SDR-Empfängerprofile aus `static/plugins/wf_profiles.json` sauber aufsteigend nach Frequenz; beim Profilwechsel greifen sowohl die serverseitige Profil-Verifizierung (`owrx/dnx_system_verify.py` / `profile_switch`) als auch die profilbezogenen Pegelsätze (`__dnxPegelProfile`).
